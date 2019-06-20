@@ -59,7 +59,6 @@ set showmatch
 set numberwidth=2
 set backspace=indent,eol,start
 "set list lcs=tab:\|\ 
-IndentLinesDisable
 runtime macros/matchit.vim
 execute pathogen#infect()
 
