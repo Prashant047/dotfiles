@@ -15,22 +15,26 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'aonemd/kuroi.vim'
+" Plugin 'aonemd/kuroi.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'severin-lemaignan/vim-minimap'
+" Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/ReplaceWithRegister'
-Plugin 'isRuslan/vim-es6'
+" Plugin 'isRuslan/vim-es6'
 Plugin 'mattn/emmet-vim'
-Plugin 'Yggdroot/indentLine' 
+Plugin 'pangloss/vim-javascript'
+" Plugin 'Yggdroot/indentLine' 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tomlion/vim-solidity'
 Plugin 'othree/xml.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tommcdo/vim-exchange'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,14 +62,27 @@ set shiftwidth=4
 set showmatch
 set numberwidth=2
 set backspace=indent,eol,start
+set fillchars+=vert:\ 
+:set hlsearch incsearch
+hi VertSplit ctermbg=NONE guibg=NONE
 "set list lcs=tab:\|\ 
 runtime macros/matchit.vim
 execute pathogen#infect()
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
+" Airline Customizations
+" let g:airline_left_sep = '\uE0B8'
+" let g:airline_right_sep = '\uE0BA'
 let g:airline#extensions#tabline#enabled = 1
-let g:indentLine_setColors = 0
+let g:airline_powerline_fonts = 1
+
 let g:user_emmet_leader_key=','
-let g:indentLine_setColors = 0
+
+let g:ycm_show_diagnostics_ui = 0
+
 let g:indentLine_color_term = 239
+
+" custom vim mapping here
+imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
+inoremap jk <esc>
