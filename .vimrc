@@ -69,6 +69,8 @@ hi VertSplit ctermbg=NONE guibg=NONE
 runtime macros/matchit.vim
 execute pathogen#infect()
 
+autocmd FileType c,cpp,cs,java          setlocal commentstring=//\ %s
+
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
 " Airline Customizations
