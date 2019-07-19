@@ -87,6 +87,9 @@ let g:ycm_show_diagnostics_ui = 0
 
 let g:indentLine_color_term = 239
 
-" custom vim mapping here
+"CUSTOM VIM MAPPING HERE ==========================||
 imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
 inoremap jk <esc>
+" comment a function block
+imap <Leader>fb $gc% 
+" =================================================||
