@@ -36,6 +36,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'kkoomen/vim-doge'
+Plugin 'easymotion/vim-easymotion'
+" Plugin 'mhinz/vim-startify'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,10 +88,35 @@ let g:user_emmet_leader_key=','
 let g:ycm_show_diagnostics_ui = 0
 
 let g:indentLine_color_term = 239
+let g:indentLine_color_term = 239
 
 "CUSTOM VIM MAPPING HERE ==========================||
 imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
 inoremap jk <esc>
 " comment a function block
-imap <Leader>fb $gc% 
+nmap <Leader>fb $gc% 
 " =================================================||
+
+function! BoxComment()
+	let l:current_line = getline('.')
+	let l:padding_length = 10
+	let l:hash_str = repeat("-", strlen(current_line) + padding_length*2)
+	let l:c_line = "+" . hash_str . "+"
+
+	let l:final_line = "|" . repeat(" ",padding_length) . current_line . repeat(" ", padding_length) . "|"
+
+	execute "normal! cc"
+	execute "call setline('.', c_line)"
+	execute "normal gcl"
+	execute "normal! o"
+	execute "call setline('.', final_line)"
+	execute "normal gcl"
+	execute "normal! o"
+	execute "call setline('.', c_line)"
+	execute "normal gcl"
+
+endfunction
+
+nnoremap <Leader>cb :call BoxComment()<CR>
+
+
