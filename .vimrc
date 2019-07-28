@@ -37,6 +37,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'kkoomen/vim-doge'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'joshdick/onedark.vim'
 " Plugin 'mhinz/vim-startify'
  
 " All of your Plugins must be added before the following line
@@ -90,12 +91,11 @@ let g:ycm_show_diagnostics_ui = 0
 let g:indentLine_color_term = 239
 let g:indentLine_color_term = 239
 
-"CUSTOM VIM MAPPING HERE ==========================||
+"CUSTOM VIM STUFF HERE ==========================||
 imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
 inoremap jk <esc>
 " comment a function block
 nmap <Leader>fb $gc% 
-" =================================================||
 
 function! BoxComment()
 	let l:current_line = getline('.')
@@ -120,3 +120,4 @@ endfunction
 nnoremap <Leader>cb :call BoxComment()<CR>
 
 
+" =================================================||
