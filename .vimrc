@@ -15,15 +15,12 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-" Plugin 'aonemd/kuroi.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
-" Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/ReplaceWithRegister'
-" Plugin 'isRuslan/vim-es6'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'Yggdroot/indentLine' 
@@ -38,6 +35,8 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'kkoomen/vim-doge'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'joshdick/onedark.vim'
+Plugin 'danilo-augusto/vim-afterglow'
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'mhinz/vim-startify'
  
 " All of your Plugins must be added before the following line
@@ -55,7 +54,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
+if $TMUX == ''
+	set clipboard+=unnamed
+endif
 
 set number relativenumber
 augroup filetype javascript syntax=javascript
@@ -70,13 +71,17 @@ set backspace=indent,eol,start
 set fillchars+=vert:\ 
 :set hlsearch incsearch
 hi VertSplit ctermbg=NONE guibg=NONE
-"set list lcs=tab:\|\ 
+" set list lcs=tab:\|\ 
 runtime macros/matchit.vim
+
 execute pathogen#infect()
 
 autocmd FileType c,cpp,cs,java          setlocal commentstring=//\ %s
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 " Airline Customizations
 " let g:airline_left_sep = '\uE0B8'
@@ -94,8 +99,17 @@ let g:indentLine_color_term = 239
 "CUSTOM VIM STUFF HERE ==========================||
 imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
 inoremap jk <esc>
+
 " comment a function block
-nmap <Leader>fb $gc% 
+nmap <Leader>fb gca{ 
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 function! BoxComment()
 	let l:current_line = getline('.')
@@ -120,4 +134,5 @@ endfunction
 nnoremap <Leader>cb :call BoxComment()<CR>
 
 
+colorscheme deus
 " =================================================||
