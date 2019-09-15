@@ -37,6 +37,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'joshdick/onedark.vim'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'majutsushi/tagbar'
 " Plugin 'mhinz/vim-startify'
  
 " All of your Plugins must be added before the following line
@@ -92,9 +93,10 @@ let g:airline_powerline_fonts = 1
 let g:user_emmet_leader_key=','
 
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 
-let g:indentLine_color_term = 239
-let g:indentLine_color_term = 239
+" let g:indentLine_color_term = 239
+" let g:indentLine_color_term = 239
 
 "CUSTOM VIM STUFF HERE ==========================||
 imap <c-d>r  <esc>"zyiwA = require("<c-r>z<esc>A;<esc>bbi
@@ -102,6 +104,15 @@ inoremap jk <esc>
 
 " comment a function block
 nmap <Leader>fb gca{ 
+
+" edit vimrc
+nmap <Leader>erc :edit ~/Documents/dotfiles/.vimrc<CR>
+" load vimrc
+nmap <Leader>lrc :source ~/.vimrc<CR>
+
+" open tagbar
+nmap <Leader>tb :TagbarToggle<CR>
+let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
