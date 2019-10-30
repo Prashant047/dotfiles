@@ -110,11 +110,14 @@ nmap <Leader>fb gca{
 " edit vimrc
 nmap <Leader>erc :edit ~/Documents/dotfiles/.vimrc<CR>
 " load vimrc
-nmap <Leader>lrc :source ~/.vimrc<CR>
+nmap <Leader>lrc :source ~/Documents/dotfiles/.vimrc<CR>
 
 " open tagbar
 nmap <Leader>tb :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+
+" toggle NERDTree
+nmap <leader>tt :NERDTreeToggle<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

@@ -17,6 +17,11 @@ export TMUXC=~/.tmux.conf
 export TERM="xterm-256color"
 export VIMRC=~/Documents/dotfiles/.vimrc
 export ZSHRC=~/.zshrc
+export TOP_1_PERCENT="9f1fecf3b81d287ea914ce4d19b235f4236bc93f848078623bd2ef32a855a4df"
+
+# fzf custom config
+export FZF_DEFAULT_OPTS='--layout=reverse --border'
+export FZF_BASE=/usr/local/bin/fzf 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -70,7 +75,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
