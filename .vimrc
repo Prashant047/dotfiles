@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
@@ -40,8 +40,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'majutsushi/tagbar'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'wellle/targets.vim'
-" Plugin 'mhinz/vim-startify'
- 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" Plugin 'dense-analysis/ale'
+" Plugin 'airblade/vim-gitgutter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -119,6 +122,15 @@ let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 " toggle NERDTree
 nmap <leader>tt :NERDTreeToggle<CR>
 
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>sl :Line<CR>
+
+" buffer navigation mappings
+nmap <Leader>w :bn<CR>
+nmap <Leader>s :bp<CR>
+nmap <Leader>bd :bd<CR>
+
+" pane switching mappings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
