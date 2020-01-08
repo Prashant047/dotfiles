@@ -122,8 +122,10 @@ let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 " toggle NERDTree
 nmap <leader>tt :NERDTreeToggle<CR>
 
+" FZF mappings
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>sl :Line<CR>
+nnoremap <Leader>bl :Buffers<CR>
 
 " buffer navigation mappings
 nmap <Leader>w :bn<CR>
