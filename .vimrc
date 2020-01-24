@@ -126,6 +126,7 @@ nmap <leader>tt :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>sl :Line<CR>
 nnoremap <Leader>bl :Buffers<CR>
+nnoremap <Leader>st :Tags<CR>
 
 " buffer navigation mappings
 nmap <Leader>w :bn<CR>
@@ -163,6 +164,10 @@ endfunction
 
 nnoremap <Leader>cb :call BoxComment()<CR>
 
+" set t_Co=256
+" set termguicolors
+" set background=dark    " Setting dark mode
 
 colorscheme deus
+" let g:deus_termcolors=256
 " =================================================||
