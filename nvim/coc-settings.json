@@ -1,5 +1,5 @@
 {
-    "diagnostic.enable": false,
+    "diagnostic.enable": true,
     "languageserver": {
         "ccls": {
             "command": "ccls",
@@ -26,5 +26,8 @@
     "clangd.path": "/usr/local//Cellar/llvm/10.0.0_3/bin/clangd",
     "explorer.width":30,
     "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.strategy": false
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings":{
+        "<cr>": ["expandable?", "expand", "open"]
+    }
 }

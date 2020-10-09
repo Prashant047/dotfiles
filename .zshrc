@@ -17,16 +17,21 @@ export TMUXC=~/.tmux.conf
 export TERM="xterm-256color"
 export VIMRC=~/Documents/dotfiles/.vimrc
 export ZSHRC=~/.zshrc
-export TOP_1_PERCENT="9f1fecf3b81d287ea914ce4d19b235f4236bc93f848078623bd2ef32a855a4df"
 
 # fzf custom config
 export FZF_DEFAULT_OPTS='--layout=reverse --border'
 export FZF_BASE=/usr/local/bin/fzf 
+export EDITOR=vim
+
+# custom alias
+alias vim=nvim
+alias cat=bat
+alias dang=echo
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="lambda"
 
 # POWERLINE CUSTOMIZATIONS
 POWERLEVEL9K_DISABLE_RPROMPT=true
@@ -75,7 +80,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting fzf)
+plugins=(git zsh-syntax-highlighting fzf docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,3 +117,7 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Volumes/Segate/Fun_Stuff/xi-electron/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Volumes/Segate/Fun_Stuff/xi-electron/node_modules/tabtab/.completions/electron-forge.zsh
